@@ -7,7 +7,7 @@ module "ec2" {
   source 	= "./ec2"
   ami       = var.ami
   component_name = each.key
-  sg_id      = [module.network.sg_id]
+  sg_id      = module.network.sg_id
   type       = var.type
 }
 
