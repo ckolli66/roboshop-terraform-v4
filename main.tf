@@ -16,7 +16,7 @@ module "route53" {
   source = "./route53"
 
   component_name = each.key
-  private_ip     = module.ec2.private_ip
+  private_ip     = module.ec2[each.key].private_ip
   record_type    = var.record_type
   zone_id        = var.zone_id
 }
@@ -30,6 +30,6 @@ module "ansible" {
   source = "./ansible"
 
   component_name = each.key
-  private_ip     = module.ec2.private_ip
+  private_ip     = module.ec2[each.key].private_ip
 }
 

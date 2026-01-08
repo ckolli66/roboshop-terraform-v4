@@ -1,7 +1,6 @@
 variable "ami" {
   default = "ami-09c813fb71547fc4f"
 }
-variable "sg_id" {}
 variable "type" {
   default = "t3.small"
 }
